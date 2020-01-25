@@ -126,3 +126,6 @@ Successfully installed psycopg2-2.8.4
         'PASSWORD': 'notshown',
         'HOST': 'localhost',
         'PORT': '5432',
+
+#in settigns file: updated TIME_ZONE from UTC to
+#TIME_ZONE = 'EST'
