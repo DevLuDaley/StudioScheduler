@@ -83,6 +83,11 @@ update settings.py
 to include new app => 'scheduler'
 change Timezone to 'EST'
 
-# 5\. git checkout 3. setup-models/relationships
+```
+use github desktop app
+commit=>push => create new_branch (clone current) => checkout new_branch
+```
+
+# 5\. git checkout 3-setup-models/relationships
 
 # 6\. create models
