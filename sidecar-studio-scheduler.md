@@ -1,27 +1,31 @@
 # 1\. create and activate \(env\_pizza\)
 
 ```
-create github repo titled => django-forms
+create github repo titled => studioScheduler
 ```
 
 `git clone git@github.com:DevLuDaley/django-forms.git`
 
-`cd django-forms`
+`cd studioscheduler`
 
-`python3 -m venv env_pizza`
+`python3 -m venv env_studioscheduler`
 
-`source env_pizza/bin/activate`
+<br>
+\`\`\`
+actovate environment - also either vcode will ask or just press  \`shift +cmd +P\` and select interpreter
+\`\`\`
 
-```
-access command palette
-```
-
-`cmd + shift + P`
-
-`select python interpreter`
+`source env_studioscheduler/bin/activate`
 
 ```
-select ['env_pizza':venv] environment
+access command palette => [cmd + shift + P]
+enter 'interpreter'
+select python env
+```
+<br>
+<br>
+```
+select ['env_studioscheduler':venv] environment
 ```
 
 # 2\. install django
