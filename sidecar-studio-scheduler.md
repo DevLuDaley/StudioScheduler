@@ -33,41 +33,56 @@ select ['env_studioscheduler':venv] environment
 
 # 3\. git checkout 2-setup-django
 
-# 4\. install django
+clone setup env branch to create 'stup-django' branch
+
+git checkoiut to new branch
+
+`git checkout setup_django`
 
 ```
-clone master branch to create 'django-setup' branch
-
 note:
   if you get an error pull the latest version of the master project from the remote repo.
-
   Now the local git knows about the new branch ('django-setup') created in remote git/GitHub
 ```
 
 `git pull`
 
-`git checkout setup_django`
+# 4\. install django + project & app
 
 `pip install django`
 
-# 3\. create nandiasgarden project & folder
+```
+create studio project & folder
+```
 
-`django-admin startproject nandiasgarden`
+`django-admin startproject studio`
 
-# 4\. rename project folder to projectnandiasgarden
+```
+rename project folder to projectstudio
+```
 
-`mv nandiasgarden/ projectnandiasgarden`
+`mv studio/ projectstudio`
 
 - the tutorial says nandiasgarden-project but "name-project" produces an error in py 3.8\*\*
 - rename project folder. add project to start of the name i.e folder => projectfolder or projectnandiasgarden for this project
 - this helps differentiate between the project folder and the autogenerate folder (with the identaical project name) that lives in the project folder
 
-open projectnandiasgarden
+```
+open projectstudio
+```
 
-`cd projectnandiasgarden`
+`cd projectstudio`
 
-`django-admin startapp pizza`
+```
+create scheduler app
+```
 
-# 5\. create pizza app
+`django-admin startapp scheduler`
 
-`django-admin startapp pizza`
+update settings.py
+to include new app => 'scheduler'
+change Timezone to 'EST'
+
+# 5\. git checkout 3. setup-models/relationships
+
+# 6\. create models
