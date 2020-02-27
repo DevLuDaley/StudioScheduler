@@ -1,4 +1,4 @@
-# 1\. create and activate \(env\_pizza\)
+# 1\. create and activate \(env_pizza\)
 
 ```
 create github repo titled => studioScheduler
@@ -22,13 +22,18 @@ access command palette => [cmd + shift + P]
 enter 'interpreter'
 select python env
 ```
+
 <br>
 <br>
 ```
 select ['env_studioscheduler':venv] environment
 ```
 
-# 2\. install django
+# 2\. setup env complete django
+
+# 3\. git checkout 2-setup-django
+
+# 4\. install django
 
 ```
 clone master branch to create 'django-setup' branch
@@ -53,9 +58,9 @@ note:
 
 `mv nandiasgarden/ projectnandiasgarden`
 
-* the tutorial says nandiasgarden-project but "name-project" produces an error in py 3.8\*\*
-* rename project folder. add project to start of the name i.e folder => projectfolder or projectnandiasgarden for this project
-* this helps differentiate between the project folder and the autogenerate folder (with the identaical project name) that lives in the project folder
+- the tutorial says nandiasgarden-project but "name-project" produces an error in py 3.8\*\*
+- rename project folder. add project to start of the name i.e folder => projectfolder or projectnandiasgarden for this project
+- this helps differentiate between the project folder and the autogenerate folder (with the identaical project name) that lives in the project folder
 
 open projectnandiasgarden
 
