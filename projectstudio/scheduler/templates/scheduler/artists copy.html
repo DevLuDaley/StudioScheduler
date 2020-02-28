@@ -1,0 +1,25 @@
+<!DOCTYPE html> {% extends 'scheduler/base.html' %}
+<html>
+
+<head>
+    <title>Artists</title>
+
+</head>
+
+<body>
+    <h1> hi!</h1>
+    {% block title %}Artists{% endblock %}
+    {% block content %}
+
+    <div class="artist-list">
+        {% for artist in artists %}
+        <div class="artist">
+            <h3>{{ artist.name }}</h3>
+        </div>
+        {% endfor %}
+    </div>
+    {% endblock %}
+
+</body>
+
+</html>

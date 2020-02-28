@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends 'scheduler/base.html' %} {% block 'body' %}
+
+<head>
+    <title>Artists</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    {% block title %}Artists{% endblock %} {% block content %}
+
+    <div class="artist-list">
+        {% for artist in artists %}
+        <div class="artist">
+            <h3>{{ artist.name }} - {{ artist.location }}</h3>
+
+
+        </div>
+        {% endfor %}
+    </div>
+    {% endblock %} {% endblock %}
+</body>
+
+</html>

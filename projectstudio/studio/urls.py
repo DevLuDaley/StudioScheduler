@@ -15,7 +15,16 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+#from django.urls import include, path
+import scheduler.views
+from django.conf import settings
+
+app_name = 'scheduler'
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', scheduler.views.home, name='home'),
+    path('artists', scheduler.views.artists, name='artists'),
 ]
+
+#    path('new', scheduler.views.ArtistCreate.as_view(), name='artist_new'),
