@@ -23,8 +23,6 @@ app_name = 'scheduler'
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', scheduler.views.home, name='home'),
-    path('artists', scheduler.views.artists, name='artists'),
+    #path('', scheduler.views.home, name='home'),
+    path('artists/', scheduler.views.artists, name='artists'),
 ]
-
-#    path('new', scheduler.views.ArtistCreate.as_view(), name='artist_new'),

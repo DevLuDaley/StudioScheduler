@@ -10,14 +10,23 @@
 
 <body>
     {% block title %}Artists{% endblock %} {% block content %}
-
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
     <div class="artist-list">
-        {% for artist in artists %}
-        <div class="artist">
-            <h3>{{ artist.name }} - {{ artist.location }}</h3>
+        <table>
 
-
-        </div>
+            {% for artist in artists %}
+            <div class="artist">
+                <tr>
+                    <h3>{{ artist.name }} - {{ artist.location }}</h3>
+                </tr>
+            </div>
+        </table>
         {% endfor %}
     </div>
     {% endblock %} {% endblock %}

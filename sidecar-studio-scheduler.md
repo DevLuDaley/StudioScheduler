@@ -91,3 +91,7 @@ commit=>push => create new_branch (clone current) => checkout new_branch
 # 5\. git checkout 3-setup-models/relationships
 
 # 6\. create models
+
+
+![](2020-02-27-21-51-30.png)
+
