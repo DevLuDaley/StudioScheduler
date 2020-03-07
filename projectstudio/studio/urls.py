@@ -23,6 +23,10 @@ app_name = 'scheduler'
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    #path('', scheduler.views.home, name='home'),
+    path('', scheduler.views.home, name='home'),
     path('artists/', scheduler.views.artists, name='artists'),
+    path('studios/', scheduler.views.studios, name='studios'),
+    path('engineers/', scheduler.views.engineers, name='engineers'),
+    path('createsession/', scheduler.views.createsession, name='createsession'),
+    path('sessions/', scheduler.views.sessions, name='sessions'),
 ]

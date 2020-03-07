@@ -35,8 +35,11 @@ class Session(models.Model):
     appointment_date = models.DateTimeField(default=datetime.now, blank=True)
     status = models.BooleanField(default=False)
     duration = models.PositiveIntegerField(default=30, verbose_name='minutes')
+    studio = models.ForeignKey(Studio, on_delete=models.CASCADE, default=False)
+    artist = models.ForeignKey(Artist, on_delete=models.CASCADE, default=False)
+    engineer = models.ForeignKey(Engineer, on_delete=models.CASCADE, default=False)
 
 #     name = models.models.CharField(_(""), max_length=30)
 #     location = models.models.CharField(_(""), max_length=30)
     def __str__(self):
-        return self.appointment_date
+        return self.appointment_date.strftime("%m/%d/%Y, %I%S:%p").__str__(), self.studio.__str__(), self.engineer.__str__(), self.artist.__str__()

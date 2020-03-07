@@ -93,5 +93,20 @@ commit=>push => create new_branch (clone current) => checkout new_branch
 # 6\. create models
 
 
+# 7. prepare to convert to class based views
+
+also installed bandit for python linting
+
+created defualts for models to ensure that their fields coule be persisted to the db.
+
 ![](2020-02-27-21-51-30.png)
 
+
+good video for class based views => https://www.linkedin.com/learning/advanced-web-development-with-django/extending-class-based-views
+
+uses the polls app that you built from django sit...try to branch and follow-along to learn about class based views.   if not then select a diff tutorial either from youtubve or django docs site.
+
+
+https://www.youtube.com/watch?v=-tqhhT3R6VY
+
+![](2020-02-27-23-19-47.png)

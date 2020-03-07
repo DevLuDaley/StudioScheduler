@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends 'scheduler/base.html' %} {% block 'body' %}
+
+<head>
+    <title>Sessions</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    {% block title %}Sessions{% endblock %} {% block content %}
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="session-list">
+        <table>
+            <h3>
+                <tr>Appointment Date</tr>
+
+                <tr>Duration</tr>
+
+                <tr>Studio</tr>
+
+                <tr>Engineer</tr>
+                <tr>Engineer</tr>
+            </h3>
+
+            <h4>
+                {% for session in sessions %}
+                <div class="session">
+                    <td>
+                        {{ session.appointment_date }}
+                    </td>
+                    <td>
+                        {{ session.duration }}
+                    </td>
+                    <td>
+                        {{ session.studio }}
+                    </td>
+                    <td>
+                        {{ session.engineer }}
+                    </td>
+                    <td>
+                        {{ session.artist }}
+                    </td>
+                </div>
+        </table>
+        </h4>
+        {% endfor %}
+    </div>
+    {% endblock %} {% endblock %}
+</body>
+
+</html>

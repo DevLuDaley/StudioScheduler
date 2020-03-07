@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends 'scheduler/base.html' %} {% block 'body' %}
+
+<head>
+    <title>Studios</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    {% block title %}Studios{% endblock %} {% block content %}
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="studio-list">
+        <table>
+
+            {% for studio in studios %}
+            <div class="studio">
+                <tr>
+                    <h3>{{ studio.name }} - {{ studio.location }}</h3>
+                </tr>
+            </div>
+        </table>
+        {% endfor %}
+    </div>
+    {% endblock %} {% endblock %}
+</body>
+
+</html>
