@@ -13,20 +13,32 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.contrib import admin
-from django.urls import path
-#from django.urls import include, path
-import scheduler.views
 from django.conf import settings
+from django.conf.urls.static import static
+from django.contrib import admin
+from django.urls import include, path
+#from django.urls import path
+
+import scheduler.views
+import scheduler.api_views
+#from projectstudio.scheduler import views
 
 app_name = 'scheduler'
 
+# router = routers.DefaultRouter()
+# router.register(r'artists', views.ArtistViewSet)
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('api/v1/artists/', scheduler.api_views.ArtistList.as_view()),
+    path('api/v1/sessions/', scheduler.api_views.SessionList.as_view()),
+    #path('', include(router.urls)),
+    #path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     path('', scheduler.views.home, name='home'),
     path('artists/', scheduler.views.artists, name='artists'),
     path('studios/', scheduler.views.studios, name='studios'),
     path('engineers/', scheduler.views.engineers, name='engineers'),
     path('createsession/', scheduler.views.createsession, name='createsession'),
     path('sessions/', scheduler.views.sessions, name='sessions'),
-]
+]  # + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+# url(r'^api-auth/', include('rest_framework.urls'))

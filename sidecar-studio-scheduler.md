@@ -245,3 +245,20 @@ tup-model-indices ✗ ruby-2.6.1         2h43m ⚑ ◒
 
 
 ```
+
+<!-- ! -->
+
+restart on Wednesday March 18th
+
+<!-- ! -->
+
+update current project
+need :
+add js/react
+add pagination
+add tests
+add data (autofeed, humanize?)
+
+```
+
+```

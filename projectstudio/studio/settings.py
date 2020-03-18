@@ -38,7 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'scheduler',
-    #'widget_tweaks',
+    'rest_framework',
+    'django_filters',
+    # 'widget_tweaks',
+    # 'snippets.apps.SnippetsConfig',
 ]
 
 MIDDLEWARE = [
@@ -114,6 +117,15 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
+
+#!pagination
+#!set how many objects returned per page are returned
+REST_FRAMEWORK = {
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 10,     'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+    ]
+}
 
 
 # Static files (CSS, JavaScript, Images)
