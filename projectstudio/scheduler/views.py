@@ -1,11 +1,19 @@
 from django.core.cache import cache
 from django.shortcuts import render
+from rest_framework.generics import CreateAPIView
 from .models import Artist, Studio, Engineer, Session
 from .forms import SessionForm
 from django.forms import formset_factory
 from rest_framework import viewsets
 from rest_framework import permissions
 from scheduler.serializers import ArtistSerializer, SessionSerializer
+
+from rest_framework.response import Response
+from rest_framework.decorators import api_view
+from rest_framework import status
+
+#from .models import Artist
+from .serializers import *
 
 
 def home(request):
@@ -77,3 +85,50 @@ def createsession(request):
     else:
         form = SessionForm()
         return render(request, 'scheduler/create_session.html', {'sessionform': form})
+
+
+class SessionCreateView(CreateAPIView):
+    queryset = Session.objects.all()
+    serializer_class = SessionSerializer
+
+
+#! logrocket logic below
+
+@api_view(['GET', 'POST'])
+def artists_list(request):
+    if request.method == 'GET':
+        data = []
+        artists = Artist.objects.all()
+
+        serializer = ArtistSerializer(
+            data, context={'request': request}, many=True)
+
+        return Response(serializer.data)
+
+    elif request.method == 'POST':
+        serializer = ArtistSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(status=status.HTTP_201_CREATED)
+
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+@api_view(['PUT', 'DELETE'])
+def artists_detail(request, pk):
+    try:
+        artist = Artist.objects.get(pk=pk)
+    except Artist.DoesNotExist:
+        return Response(status=status.HTTP_404_NOT_FOUND)
+
+    if request.method == 'PUT':
+        serializer = ArtistSerializer(
+            artist, data=request.data, context={'request': request})
+        if serializer.is_valid():
+            serializer.save()
+            return Response(status=status.HTTP_204_NO_CONTENT)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+    elif request.method == 'DELETE':
+        artist.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)

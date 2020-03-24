@@ -40,11 +40,13 @@ INSTALLED_APPS = [
     'scheduler',
     'rest_framework',
     'django_filters',
+    'corsheaders'
     # 'widget_tweaks',
     # 'snippets.apps.SnippetsConfig',
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -52,7 +54,10 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.middleware.common.CommonMiddleware',
 ]
+
+CORS_ORIGIN_ALLOW_ALL = True
 
 ROOT_URLCONF = 'studio.urls'
 
@@ -118,6 +123,14 @@ USE_L10N = True
 
 USE_TZ = True
 
+
+STATIC_URL = '/static/'
+MEDIA_ROOT = os.path.abspath(os.path.join(BASE_DIR, 'scheduler', 'uploads'))
+MEDIA_URL = '/uploads/'
+
+FRONTEND_ROOT = os.path.abspath(
+    os.path.join(BASE_DIR, '..', 'frontend', 'build'))
+
 #!pagination
 #!set how many objects returned per page are returned
 REST_FRAMEWORK = {
@@ -126,9 +139,12 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
     ]
 }
-
+# we whitelist localhost:3000 because that's where frontend will be served
+CORS_ORIGIN_WHITELIST = (
+    'http://localhost:3000',
+    'http://localhost:8000',
+    'http://localhost:8080',
+)
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
-
-STATIC_URL = '/static/'

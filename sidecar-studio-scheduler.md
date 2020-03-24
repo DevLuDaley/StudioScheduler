@@ -260,5 +260,6 @@ add tests
 add data (autofeed, humanize?)
 
 ```
+npm install --save react-router-dom
 
 ```

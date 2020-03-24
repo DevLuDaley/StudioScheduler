@@ -11,7 +11,7 @@ from scheduler.models import Artist, Session
 class ArtistList(ListAPIView):
     queryset = Artist.objects.all()
     serializer_class = ArtistSerializer
-    filter_backends = (DjangoFilterBackend, SearchFilter)
+    filter_fields = '__all__'
     #filter_fields = ('name',)
 
 
